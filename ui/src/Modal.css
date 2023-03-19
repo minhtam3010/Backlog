@@ -1,0 +1,21 @@
+.title {
+    display: inline-block;
+}
+
+.first-column:hover .myModal {
+    display: inline-block !important;
+    background: #ccc;
+    color: black;
+}
+
+.crop {
+    text-overflow: ellipsis;
+
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.backlog-btn {
+    margin: 25px 0;
+}

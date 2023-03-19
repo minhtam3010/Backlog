@@ -1,0 +1,37 @@
+.btn {
+    background: #3366ff;
+    color: #ffffff;
+    border: 1px solid #3366ff;
+    border-radius: 5px;
+    padding: 20px 25px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.btn:hover {
+    background: #0033cc;
+}
+
+.body {
+    text-align: center;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+td {
+    padding: 0.5rem;
+    word-wrap: break-word;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+thead {
+    background: #3366ff;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+}

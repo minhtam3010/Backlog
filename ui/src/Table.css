@@ -1,0 +1,12 @@
+.backlog-table {
+    margin-top: 30px;
+}
+
+.table-column {
+    width: 20%;
+}
+
+table tbody td,
+thead th {
+    border: 1px solid #ccc;
+}
