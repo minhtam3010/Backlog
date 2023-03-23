@@ -1,6 +1,9 @@
 package db
 
-import "time"
+import (
+	"database/sql"
+	"time"
+)
 
 type User struct {
 	ID          int    `json:"id"`
@@ -24,6 +27,9 @@ func (q *Querier) Login(username, password string) (bool, error) {
 		res User
 	)
 	err := q.DB.QueryRow("SELECT id FROM users WHERE user_name = ? AND password = ?", username, password).Scan(&res.ID)
+	if sql.ErrNoRows == err {
+		return false, nil
+	}
 	if err != nil {
 		return false, err
 	}

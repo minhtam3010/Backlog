@@ -44,7 +44,7 @@ func (h *Handler) Login(ctx *gin.Context) {
 	}
 
 	if res {
-		ctx.JSON(200, gin.H{"message": "success"})
+		ctx.JSON(200, gin.H{"message": "true"})
 		return
 	}
 	ctx.JSON(200, gin.H{"message": "fail"})

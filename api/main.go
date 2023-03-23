@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 
 	r.Use(func(ctx *gin.Context) {
@@ -28,11 +29,18 @@ func main() {
 		c.Status(http.StatusOK)
 	})
 
+	r.OPTIONS("/api/login", func(c *gin.Context) {
+		c.Header("Access-Control-Allow-Origin", "http://localhost:5173")
+		c.Header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+		c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+		c.Status(http.StatusOK)
+	})
+
 	r.SetTrustedProxies(nil)
 	conn := db.NewQuerier()
 
 	handler := handler.NewHandler(conn)
-	r.GET("/api/login", handler.Login)
+	r.POST("/api/login", handler.Login)
 	r.GET("/api/name", handler.GetAllFullNameOfUsers)
 	r.GET("/api/workload/all", handler.GetAllWorkload)
 
